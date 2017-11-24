@@ -16,14 +16,15 @@ See the general specifications for instructions list.
   * constants
     * `NAME:VALUE`
     * refering to constants
-      * `!NAME`
+      * `M%NAME`
+      * instead of using `:` after a mode use `%`
     * example
-    * names should be up to 5 letters of length (so that they don't break the indent)
+    * names should be up to 6 letters of length (so that they don't break the indent)
       * although this is purely subjective as the indent is not enforced in any way
     * constants are compile-time abstraction only
 
 ```
 CONST:0x0F0F
-CPY  M:!CONST $M:0x0000
+CPY  M:%CONST $M:0x0000
 CPY $M:0x0000 $M:0x0000 #for indent comparison
 ```
