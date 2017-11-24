@@ -215,5 +215,5 @@ bool Instruction::usesB() const
 
 Word Instruction::assemble() const
 {
-	return static_cast<Byte>(opcode) | static_cast<Nibble>(A.assemble() << 4) | B.assemble();
+	return static_cast<Word>(opcode << 8) | static_cast<Nibble>(A.assemble() << 4) | B.assemble();
 }
