@@ -1,6 +1,5 @@
 # V16-ASM
 
-See the general specifications for instructions list.
 ## Syntax
   * `ZZZ $A:XXXX $B:YYYY` where
     * `ZZZ` - base instruction (for example `ADD`)
