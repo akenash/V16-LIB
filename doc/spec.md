@@ -13,7 +13,7 @@
     * `F[O]` refers to overflow flag etc.
   * 256x 1W stack (`S[0]` .. `S[FF]`)
   * hardware modules
-  * big endian
+  * little endian
 
 ## Hardware Modules
   * Hardware address is composed of (nibbles)
