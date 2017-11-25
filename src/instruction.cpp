@@ -3,13 +3,13 @@
 #include <v16/instruction.hpp>
 
 Mode::Mode(Nibble value) :
-	type(static_cast<ModeType>(value & 0b0111)),
+	type(static_cast<Type>(value & 0b0111)),
 	indirect(value & 0b1000)
 {
 
 }
 
-Mode::Mode(ModeType type, bool indirect) :
+Mode::Mode(Mode::Type type, bool indirect) :
 	type(type),
 	indirect(indirect)
 {
@@ -20,14 +20,14 @@ unsigned Mode::getSize() const
 {
 	switch(type)
 	{
-		case ModeType::M:
-		case ModeType::R:
-		case ModeType::H: return 1;
+		case Type::M:
+		case Type::R:
+		case Type::H: return 1;
 		//
-		case ModeType::P:
-		case ModeType::T:
-		case ModeType::S:
-		case ModeType::F: return 0;
+		case Type::P:
+		case Type::T:
+		case Type::S:
+		case Type::F: return 0;
 		//
 		default: throw std::runtime_error("illegal mode");
 	}
@@ -42,16 +42,16 @@ unsigned Mode::getCycleCost() const
 	}
 	switch(type)
 	{
-		case ModeType::P:
-		case ModeType::T:
-		case ModeType::S: cycle += 1; break;
+		case Type::P:
+		case Type::T:
+		case Type::S: cycle += 1; break;
 		//
-		case ModeType::M: cycle += 2; break;
+		case Type::M: cycle += 2; break;
 		//
-		case ModeType::H: cycle += 4; break;
+		case Type::H: cycle += 4; break;
 		//
-		case ModeType::F:
-		case ModeType::R: break;
+		case Type::F:
+		case Type::R: break;
 		//
 		default: throw std::runtime_error("illegal mode");
 	}

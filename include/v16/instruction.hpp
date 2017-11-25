@@ -2,28 +2,28 @@
 
 #include <v16/architecture.hpp>
 
-enum class ModeType
-{
-	M = 00,
-	R = 01,
-	H = 02,
-	P = 03,
-	T = 04,
-	S = 05,
-	F = 06,
-};
-
 struct Mode
 {
+	enum class Type
+	{
+		M = 00,
+		R = 01,
+		H = 02,
+		P = 03,
+		T = 04,
+		S = 05,
+		F = 06,
+	};
+
 	Mode(Nibble value);
-	Mode(ModeType type, bool indirect);
+	Mode(Type type, bool indirect);
 
 	unsigned getSize() const;
 	unsigned getCycleCost() const;
 
 	Nibble assemble() const;
 
-	ModeType type;
+	Type type;
 	bool indirect;
 };
 
