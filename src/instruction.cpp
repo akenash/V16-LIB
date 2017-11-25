@@ -22,11 +22,11 @@ unsigned Mode::getSize() const
 	{
 		case Type::M:
 		case Type::R:
+		case Type::S:
+		case Type::A:
 		case Type::H: return 1;
 		//
 		case Type::P:
-		case Type::T:
-		case Type::S:
 		case Type::F: return 0;
 		//
 		default: throw std::runtime_error("illegal mode");
@@ -42,13 +42,13 @@ unsigned Mode::getCycleCost() const
 	}
 	switch(type)
 	{
-		case Type::P:
-		case Type::T:
-		case Type::S: cycle += 1; break;
+		case Type::P: cycle += 1; break;
 		//
+		case Type::S:
+		case Type::A:
 		case Type::M: cycle += 2; break;
 		//
-		case Type::H: cycle += 4; break;
+		case Type::H: cycle += 3; break;
 		//
 		case Type::F:
 		case Type::R: break;
@@ -107,7 +107,6 @@ unsigned Instruction::getCycleCost() const
 		case AND:
 		case XOR:
 		case RSF:
-		case SDP:
 		case LSF: cycle += 1; break;
 		//
 		case CLL:
@@ -118,15 +117,18 @@ unsigned Instruction::getCycleCost() const
 		case IGT:
 		case ILT:
 		case IGQ:
-		case API:
-		case APO:
 		case ILQ: cycle += 2; break;
 		//
 		case ADD:
 		case SUB: cycle += 3; break;
 		//
+		case SDP: cycle += 4; break;
+		//
 		case MUL:
 		case DIV:
+		case API:
+		case APO: cycle += 6; break;
+		//
 		case MOD: cycle += 8; break;
 		//
 		default: throw std::runtime_error("illegal mode");
