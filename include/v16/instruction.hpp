@@ -63,6 +63,7 @@ enum Opcode
 	// HARDWARE
 	API = 0x50,
 	APO = 0x51,
+	SDP = 0x52,
 };
 
 struct Instruction

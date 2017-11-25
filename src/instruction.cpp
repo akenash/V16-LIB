@@ -107,6 +107,7 @@ unsigned Instruction::getCycleCost() const
 		case AND:
 		case XOR:
 		case RSF:
+		case SDP:
 		case LSF: cycle += 1; break;
 		//
 		case CLL:
@@ -170,6 +171,7 @@ bool Instruction::usesA() const
 		case SUB:
 		case API:
 		case APO:
+		case SDP:
 		case MUL:
 		case DIV:
 		case MOD: return true;
@@ -207,6 +209,7 @@ bool Instruction::usesB() const
 		case SUB:
 		case API:
 		case APO:
+		case SDP:
 		case MUL:
 		case DIV:
 		case MOD: return true;
