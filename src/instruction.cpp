@@ -117,12 +117,12 @@ unsigned Instruction::getCycleCost() const
 		case IGT:
 		case ILT:
 		case IGQ:
+		case API:
+		case APO:
 		case ILQ: cycle += 2; break;
 		//
 		case ADD:
 		case SUB: cycle += 3; break;
-		//
-		case SND: cycle += 4; break;
 		//
 		case MUL:
 		case DIV:
@@ -168,7 +168,8 @@ bool Instruction::usesA() const
 		case ILQ:
 		case ADD:
 		case SUB:
-		case SND:
+		case API:
+		case APO:
 		case MUL:
 		case DIV:
 		case MOD: return true;
@@ -204,7 +205,8 @@ bool Instruction::usesB() const
 		case ILQ:
 		case ADD:
 		case SUB:
-		case SND:
+		case API:
+		case APO:
 		case MUL:
 		case DIV:
 		case MOD: return true;

@@ -61,7 +61,8 @@ enum Opcode
 	DIV = 0x43,
 	MOD = 0x44,
 	// HARDWARE
-	SND = 0x50,
+	API = 0x50,
+	APO = 0x51,
 };
 
 struct Instruction
