@@ -1,4 +1,4 @@
-# V16 v1.1.0 CPU by zukonake
+# V16 CPU by zukonake
 
 ## General
   * 16 bit word - W
