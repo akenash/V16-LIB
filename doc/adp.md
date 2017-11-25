@@ -8,4 +8,3 @@ ADP enables data exchange for devices with different clock rates.
   * other devices should be able to wait for ADP device's output of one word
     * if there is no output, the wait is infinite
     * every output must be triggered by previous input
-  * by default the ADP device will ignore all inputs
