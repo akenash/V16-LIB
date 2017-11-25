@@ -1,4 +1,4 @@
-# V16-ASM by zukonake
+# V16-ASM
 
 See the general specifications for instructions list.
 ## Syntax
