@@ -131,9 +131,9 @@
 +---+------+----+----------+----------+
 | HARDWARE INTERACTION                |
 +---+------+----+----------+----------+
-| 5 | 0x50 | 11 | API X, Y | //sends X ADP input to HW[Y]
+| 6 | 0x50 | 11 | API X, Y | //sends X ADP input to HW[Y]
 +---+------+----+----------+----------+
-| 5 | 0x51 | 11 | APO X, Y | //waits for output from HW[X] and saves it in Y
+| 6 | 0x51 | 11 | APO X, Y | //waits for output from HW[X] and saves it in Y
 +---+------+----+----------+----------+
 | 4 | 0x52 | 11 | SDP X, Y | //raw SDP call, HW[R[0xF]][Y] = X
 +---+------+----+----------+----------+
