@@ -66,7 +66,7 @@ Nibble Mode::assemble() const
 Instruction::Instruction(Word value) :
 	opcode(static_cast<Opcode>(value >> 8)),
 	A((value & 0x00F0) >> 4),
-	B((value & 0x00F))
+	B((value & 0x000F))
 {
 
 }
