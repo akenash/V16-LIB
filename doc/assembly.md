@@ -21,6 +21,9 @@
     * names should be up to 6 letters of length (so that they don't break the indent)
       * although this is purely subjective as the indent is not enforced in any way
     * constants are compile-time abstraction only
+  * data
+    * you can store plain data by writing a number in the line
+    * for example beginning a line with `0x0000`
 
 ```
 CONST:0x0F0F
