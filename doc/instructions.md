@@ -24,7 +24,7 @@
 +---+----+---+------+--------------
 | 0 | I1 | 2 | R    | registry
 +---+----+---+------+--------------
-| 4 | I2 | 4 | H    | sdp hardware IO
+| 3 | I2 | 4 | H    | sdp hardware IO
 +---+----+---+------+--------------
 | 1 | I3 | 0 | P    | program counter
 +---+----+---+------+--------------
@@ -131,11 +131,11 @@
 +---+------+----+----------+----------+
 | HARDWARE INTERACTION                |
 +---+------+----+----------+----------+
-| 2 | 0x50 | 11 | API X, Y | //sends X ADP input to HW[Y]
+| 5 | 0x50 | 11 | API X, Y | //sends X ADP input to HW[Y]
 +---+------+----+----------+----------+
-| 2 | 0x51 | 11 | APO X, Y | //waits for output from HW[X] and saves it in Y
+| 5 | 0x51 | 11 | APO X, Y | //waits for output from HW[X] and saves it in Y
 +---+------+----+----------+----------+
-| 1 | 0x52 | 11 | SDP X, Y | //raw SDP call, HW[R[0xF]][Y] = X
+| 4 | 0x52 | 11 | SDP X, Y | //raw SDP call, HW[R[0xF]][Y] = X
 +---+------+----+----------+----------+
 ```
 
