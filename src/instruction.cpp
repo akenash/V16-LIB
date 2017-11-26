@@ -22,6 +22,7 @@ unsigned Mode::getSize() const
 	{
 		case Type::M:
 		case Type::R:
+		case Type::I:
 		case Type::S:
 		case Type::A:
 		case Type::H: return 1;
@@ -42,6 +43,7 @@ unsigned Mode::getCycleCost() const
 	}
 	switch(type)
 	{
+		case Type::I:
 		case Type::P: cycle += 1; break;
 		//
 		case Type::S:

@@ -34,7 +34,7 @@
 +---+----+---+------+--------------
 | 0 | I6 | 0 | F    | flags
 +---+----+---+------+--------------
-| 4 | I7 | 2 | I    | registry then increment registry
+| 1 | I7 | 2 | I    | registry then increment registry
 +---+----+---+------+-------------+
 ```
 

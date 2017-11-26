@@ -13,6 +13,7 @@ struct Mode
 		S = 04,
 		A = 05,
 		F = 06,
+		I = 07,
 	};
 
 	Mode(Nibble value);
