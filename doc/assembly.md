@@ -24,6 +24,7 @@
   * data
     * you can store plain data by writing a number in the line
     * for example beginning a line with `0x0000`
+      * you can then write more data in the same line
 
 ```
 CONST:0x0F0F
