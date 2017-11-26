@@ -37,7 +37,13 @@
       * as a compile-time abstraction the pointer will be replaced with either
         * `S:_relativepos_` or
         * `A:_relativepos_`
-      * indirect modes can be also used
+    * indirect modes can be also used
+    * pointer can also be offseted by writing a number after it
+      * the number must be prefixed by `+` or `-` to specify direction
+      * for example
+        *`.START -0x0003`
+        * which means
+          * `.START` refers to three instructions before the nearest instruction below
 
 ```
 CONST:0x0F0F
