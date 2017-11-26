@@ -14,12 +14,3 @@
   * 256x 1W stack (`S[0]` .. `S[FF]`)
   * hardware modules
   * little endian
-
-## Hardware Modules
-  * Hardware address is composed of (nibbles)
-    * `CCAA` where
-      * `C` - channel (hardware id)
-      * `A` - databus address
-    * ROM shall be connected as `HW[0xFF]`
-      * whole ROM is copied to memory when the CPU starts
-    * Memory shall be connected as `HW[0x00]`
