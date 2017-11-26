@@ -25,6 +25,19 @@
     * you can store plain data by writing a number in the line
     * for example beginning a line with `0x0000`
       * you can then write more data in the same line
+  * pc pointer
+    * you can create a relative pc pointer to be used with S and A modes by using
+      * `.NAME`
+    * the pointer will point to the line below
+    * the pointer must take the whole line (i.e. there is nothing besides it in the line)
+    * referring to the pointer is by not writing the mode and replacing the value field
+      * with `.NAME`
+      * for example
+        * `CPY  R:0x0000 $  .ITER`
+      * as a compile-time abstraction the pointer will be replaced with either
+        * `S:_relativepos_` or
+        * `A:_relativepos_`
+      * indirect modes can be also used
 
 ```
 CONST:0x0F0F
