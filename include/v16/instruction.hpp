@@ -4,19 +4,23 @@
 
 struct Mode
 {
-	enum class Type
+	enum Type
 	{
-		M = 00,
-		R = 01,
-		H = 02,
-		P = 03,
-		S = 04,
-		A = 05,
-		F = 06,
-		I = 07,
+		M = 0b00,
+		R = 0b01,
+		O = 0b10,
+		C = 0011,
+	};
+	
+	enum Modifier
+	{
+		NONE = 0b00,
+		NEGATIVE_OFFSET = 0b01,
+		POSTINCREMENT = 0b10,
+		PREINCREMENT = 0b11,
 	};
 
-	Mode(Nibble value);
+	explicit Mode(Byte value);
 	Mode(Type type, bool indirect);
 
 	unsigned getSize() const;
@@ -24,8 +28,9 @@ struct Mode
 
 	Nibble assemble() const;
 
-	Type type;
-	bool indirect;
+	Type type : 4;
+	bool indirect : 1;
+	Modifier mod : 4;
 };
 
 enum Opcode
@@ -84,3 +89,4 @@ struct Instruction
 	Mode A;
 	Mode B;
 };
+
